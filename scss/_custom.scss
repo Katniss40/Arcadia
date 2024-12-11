@@ -1,0 +1,18 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+$dark: #997E1D;
+$black: #389019;
+$tertiary: #2050C9;
+$primary: #0B4107;
+$secondary: #D1F8CE;
+$font-family-sans-serif: "delius swash caps", sans-serif !default;
+$font-family-serif: "akaya kanadaka", serif !default;
+$transition-collapse: height .35s ease;
+$btn-outline-light: #389019;
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+// Then add additional custom code here

@@ -1,0 +1,615 @@
+@import url("/node_modules/bootstrap-icons/font/bootstrap-icons.css");
+@import 'custom';
+
+/////////////////////////////////////////////////////////////////////
+
+// Remise a zero de la page
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*Mise en page du html, body, main...*/
+html, body {
+  position: relative;
+  min-height: 100vh;
+}
+
+body {
+text-align: center;
+}
+
+#main-page {
+max-width: 1870px;
+min-height: 100%;
+margin: 0 auto;
+position: relative;
+}
+
+/*Modification du curseur au survol de la souris*/
+button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+  cursor: pointer;
+}
+
+// Le header
+.navbar {
+  border-bottom: solid #575757 2px;
+  box-shadow: 0px 5px 5px #575757;
+  margin: 0 0px 0px 0px; 
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.connexion:hover::after {
+  opacity: 1;
+}
+
+.nav-item {
+  list-style-type: none;
+}
+
+// Le footer
+.footer-clean {
+  padding:14px 20px 0 20px;
+  background-color: #0b4107;
+  color:white;
+}
+
+.row-footer {
+  display: flex;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.p-footer {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+
+.footer-clean .copyright {
+  margin-top:14px;
+  margin-bottom:0;
+  font-size:13px;
+  opacity:0.6;
+}  
+
+/* Mise en place de la page 404 */
+.erreur {
+  background-image: url(/images/image_zoo.jpg);
+  margin-top: 10rem;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+//Mise en place bloc titre qui sera repeté sur toutes les pages
+.hero-scene {
+  position: relative;
+  &::before{
+      content:"";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% ;
+      height: 100% ;
+      background-image: url(/images/animaux_ia7.jpg);
+      background-size: cover; 
+      opacity: 0.6; 
+  }
+  * {
+      /* positionner les éléments devant le before*/
+      position: relative;
+  }  
+}
+
+.hero-scene-content {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
+  justify-content: center;
+  align-items: center;
+}
+
+// Style commun a tous les blocs/ paragraphes/ et autre mise en page
+#body {
+  margin-left: 5.5rem !important;
+  margin-right: 5.5rem !important;
+}
+
+.py-3 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;  
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;  
+}
+
+.bg-arc-secondary {
+  background-color: #0b4107;
+}
+
+.bg-light {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+p {
+  text-align: center;
+  margin-top: 3px;
+  margin-bottom: 2rem;
+  margin-right: 5rem;
+  margin-left: 5rem;
+}
+
+.p-habitats {
+  margin-left: 1rem;
+  margin-right: 1rem;;
+}
+
+.bg-arc-mint-green-light{
+  background-color: #d1f8cebb;
+
+}
+
+.bg-arc-mint-green {   
+  background-color: #0b4107;
+
+}
+
+.no-underline {
+  color: #eefaec;
+  text-decoration: none;
+}
+
+.px-2 {
+  padding-left: 2.5rem !important;
+}
+
+.flex-column {
+  flex-direction: column !important;
+}
+.d-flex {
+  display: flex !important;
+}
+
+button { 
+  margin-top: 10px;
+}
+
+// Les medias
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-collapse {
+      display: flex !important;
+      flex-basis: auto;
+      justify-content: flex-end;
+  }
+}
+
+@media (max-width:991px) {
+  .footer-clean .item.social > a {
+    margin-top:40px;
+  }
+}
+
+@media (max-width:767px) {
+  .footer-clean .item.social > a {
+    margin-top:10px;
+  }
+}
+
+@media (max-width:767px) {
+  .footer-clean .item {
+    text-align:center;
+    padding-bottom:20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-clean .item.social {
+    text-align:center;
+    .d-md-block {
+      display: block !important;
+    }
+  }
+}
+
+@media (min-width: 1400px) {
+  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: 1320px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: 1140px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container-xxl, .container-xl, .container-lg, .container-md, .container-sm, .container {
+      max-width: 960px;
+  }
+}
+
+@media (min-width: 768px) {
+  .d-md-block {
+      display: block !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .mt-md-2 {
+      margin-top: .5rem !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md-8 {
+      flex: 0 0 auto;
+      width: 67%;
+  }
+}
+
+@media (min-width: 768px) {
+  .col-md-3 {
+      flex: 0 0 auto;
+      width: 25%;
+  }
+}
+
+@media (min-width: 768px) {
+  .offset-md-1 {
+    margin-left: 6.333333%;
+  }
+}
+
+@media (min-width: 992px) {
+  .d-lg-flex {
+      display: flex !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-lg-4 {
+      flex: 0 0 auto;
+      width: 33.33333333%;
+  }
+}
+
+@media (min-width: 768px) {
+  .pe-md-2 {
+      padding-right: 2.5rem !important;
+  }
+}
+
+/*Page Home Mise en page du carrousel bloc 1*/
+#carousel {
+  position: relative;  
+}
+
+.carousel-caption {
+  background-color: rgba(0, 38, 28, .8);
+  border-radius: 20px; 
+}
+
+#carrousel_avis {
+  display: flex;
+  flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.border-success {
+  background-color: rgba(209, 248, 206, 0.7333333333);
+}
+
+.avis {
+  background-color: #0b4107;
+}
+
+.habitat {
+  background-color: rgba(209, 248, 206, 0.7333333333);
+}
+
+
+/*Pages Habitats et bloc 3 de la Home page -- bloc 1 de la page contact*/
+.gazelle1 {
+  margin-top: 10px;
+  max-width: 100%;
+  height: auto;
+  width: 100px;
+}
+
+.gazelle-text {
+  margin-top: 1rem;
+}
+
+.gazelle-titre {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+// partie promo
+.card-text {
+  font-size: 14px;
+}
+
+.card-habitat .card-title {
+  font-size: 1.4em;
+  background-color: #0b4107;
+  border-radius: 20px;
+  padding: 5px 15px;
+  text-align: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  float: right;
+}
+
+.services-home {
+  text-align: center;
+}
+
+/*Pages tous les habitats*/
+#welcome-habitats {
+  background-color: #0b4107;
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 90px 0 90px;    
+}
+
+/* La promo bloc 4 */
+#facts {
+  background-color: #0b4107;
+
+}
+
+.row-bloc_2 {
+  margin-left: -0.8rem;
+  margin-right: -0.8rem;
+}
+
+.row-promo {
+   display: flex;
+   margin-left: -0.8rem;
+  margin-right: -0.8rem;
+  }
+
+.row-girafe {   
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;  
+  margin-left: -0.8rem;
+  margin-right: -0.8rem; 
+ }
+
+.services-3{
+  padding-bottom: 1rem !important;
+}
+
+ #services {
+  margin-left: -0.8rem;
+  margin-right: -0.8rem;
+ }
+
+.img-top-animal-girafe { 
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-radius: 28px 10px 72px 10px;
+  display: flex;
+  width: 100%;
+  max-height: 500px;
+  align-items: center;  
+
+}
+
+#girafe {  
+  font-size: 18px;
+  background-color: #d1f8cebb;
+  border-radius: 10px 28px 10px 72px;
+
+ } 
+
+img, svg {
+  vertical-align: middle;
+}
+
+.service-img {
+  max-height: 200px;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px #0b4107;
+  border-radius: 50%;
+  transition: transform .5s ease;
+  margin-top: 20px;
+}
+
+.btn-services {
+  margin-bottom: 15px;
+}
+
+.fw-normal {
+  margin-bottom: -20px;
+}
+
+//Titres 
+.titres {
+  background-color: white;
+  opacity: 1;
+  background-color: #0b4107;
+  color: white;
+  opacity: 0.9;
+  border-radius: 20px;
+}
+
+/* Page des habitats*/
+.fw-normal-habitats {
+  margin-bottom: 1rem;
+}
+
+#animal_intro {
+  background-color: #0b4107;
+  margin: 10px -300px 10px -300px
+}
+
+.marais3 {
+  opacity: 0.2;
+
+}
+
+.img-habitat {
+  max-height: 240px;
+  box-shadow: 2px 2px #0b4107;
+  border-radius: 5%;
+}
+
+.habitats {
+  color: #044d29;
+  font-size: 45px;
+}
+
+.p-habitats {
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+/* Page services */
+#service {
+  margin-top: 20px;
+  text-align: center;
+
+}
+
+.services {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.souvenir {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.habitat-marais {
+    background-color: rgba(209, 248, 206, 0.7333333333);
+}
+
+.img-habitat-marais {
+  margin: 0px 10px 10px -50px;
+  max-width: 65%;
+}
+
+// Page Contact
+#contact_top{
+margin-top: -16px;
+}
+
+.contact-lion {
+  font-size: 24px;
+}
+
+.lion-contact {
+  height: 60%;
+  margin-top: 5rem;
+}
+
+.image-gazelle {
+  height: 50%;
+  margin: 50px 5px 5px 5px;
+}
+
+// les animaux
+.card img {
+  max-height: 300px;
+  border-radius: 20px;
+  //max-width: 300px;
+}
+
+.rounded-5 {
+  border-radius: var(--bs-border-radius-xxl) !important;
+}
+
+.bg-arc-mint-green-light-staff {
+  background-color: rgba(209, 248, 206, 0.7333333333);
+ 
+}
+
+.card-header {
+  background-color: #0b4107;
+  color: white;
+}
+
+.card-footer  {
+  background-color: #0b4107;
+  color: white;
+}
+
+.card {
+  max-width: 40rem;
+}
+
+
+// Admin
+
+.admin-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin-habitats {
+  display: flex;
+}
+
+.card-services {
+  margin-right: 20rem;
+  margin-left: 20rem;
+}
+
+.card-employe{
+  margin-right: 20rem;
+  margin-left: 20rem;
+}
+
+.card-employe .form-group .card-body .card-services .card-habitat{
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  
+}
+
+.card-habitat {
+  margin-right: 2.5rem;
+  margin-left: 2.5rem;
+}
+
+#gazelleService {
+  max-height: 300px;
+  margin-left: 120px;
+  margin-top: 70px;
+}
