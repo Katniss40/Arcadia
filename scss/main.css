@@ -12534,4 +12534,9 @@ img, svg {
   max-height: 300px;
   margin-left: 120px;
   margin-top: 70px;
+}
+
+.zooMap {
+  width: 1200px;
+  height: auto;
 }/*# sourceMappingURL=main.css.map */

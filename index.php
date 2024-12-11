@@ -83,7 +83,7 @@
 <div class="hero-scene text-center">
     <div class="hero-scene-content">
       <h1> Bienvenue au Zoo Arcadia</h1>
-      <a href="/images/zoo_map.png" class="btn btn-primary">Visite du Zoo</a>
+      <a href="/pages/Map.html" class="btn btn-primary">Visite du Zoo</a>
     </div>
   </div>
 
@@ -572,7 +572,7 @@
 
   </div>  
      
-    <a class="btn btn-primary btn-services " href="/pages/services.html">En savoir plus sur nos services cliquez -->ici<-- </a>
+    <a class="btn btn-primary btn-services " href="/pages/services.php">En savoir plus sur nos services cliquez -->ici<-- </a>
    
       
 
