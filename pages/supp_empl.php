@@ -25,6 +25,8 @@ if (isset($_get['id'])) {
     header('Location: gestion_employe.php');
 }
 
-$db->close();
+$conn->close();
+
+//$db->close();
 
 ?>

@@ -50,7 +50,7 @@
               </li>              
             </ul>
             
-            <li class="nav-item" data-show="admin employe">
+            <!--<li class="nav-item" data-show="admin employe">
               <a class="btn btn-outline-light me-2" href="/pages/employe.php">Employé</a>
             </li>
             <li class="nav-item" data-show="admin veterinaire">
@@ -58,7 +58,7 @@
             </li>
             <li class="nav-item" data-show="admin">
               <a class="btn btn-outline-light me-2" href="/pages/admin.php">Administrateur</a>
-            </li>
+            </li>-->
 
             <li class="nav-item" data-show="connected">
               <a class="btn btn-outline-light me-2" id="logoutBtn">Deconnexion</a>

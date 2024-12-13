@@ -10,8 +10,9 @@ if($conn->connect_error) {
 echo "Connexion réussi!";
 
 if(isset($_get['id'])) {
-    $id = filter_input(INPUT_GET, 'id', FILTER-SANITIZE-INT);
-
+    //$id = filter_input(INPUT_GET, 'id', FILTER-SANITIZE-INT);
+    $id = $_get['id'];
+    
     $stmt = $conn->prepare("DELETE FROM animaux WHERE id=?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
@@ -20,5 +21,6 @@ if(isset($_get['id'])) {
 
 header("location: /gestionA");
 exit();
-$conn->close();
+
+//$conn->close();
 ?>
