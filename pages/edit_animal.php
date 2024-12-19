@@ -99,10 +99,10 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item" data-show="employe">
-                            <a class="nav-link" href="/pages/employe.php">Tableau de bord</a>
+                            <a class="nav-link" href="/pages/employe.php">Retour Employé</a>
                         </li>  
                         <li class="nav-item" data-show="veterinaire">
-                            <a class="nav-link" href="/pages/sante.php">Tableau de bord</a>
+                            <a class="nav-link" href="/pages/sante.php">Retour Vétérinaire</a>
                         </li>                   
                         <li class="nav-item">
                             <a class="nav-link" href="/pages/edit_animal.php">Gérer les animaux</a>

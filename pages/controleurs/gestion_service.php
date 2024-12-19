@@ -14,24 +14,27 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Vérifier la connexion
 if($conn->connect_error) {
     die("erreur de connexion: " .$conn->connect_error);
-}
-header('Location: /pages/gestion_service.php');
-    exit();
-//echo "Connexion réussi!";
+} 
+echo "Connexion réussi!";
 
 // Récuperer les données du formulaire
 
-$service = $_POST['service'];                        
+$id = $_POST['id'];                        
+$service = $_POST['service'];
 $habitat = $_POST['habitat'];
+$horaires = $_POST['horaires'];
 $action = $_POST['action'];
 
 
+
 // insere les données dans la base de données
-$sql = " INSERT INTO services(service, habitat, action) VALUES ('$service', '$habitat', '$action')";
+$sql = "UPDATE services SET(service, habitat, horaires, action) WHERE ('$id')";
 
 
 if($conn->query($sql) === TRUE) {
-    echo "Entrée enregistrée avec succés";
+    //echo "Entrée enregistrée avec succés";
+    header('Location: /pages/admin.php');
+    exit();
 } else {
      echo "Erreur : " .$sql."<br>" .$conn->error;
 }
@@ -39,3 +42,6 @@ if($conn->query($sql) === TRUE) {
 // fermer la connexion
 $conn->close();
 ?>
+
+
+

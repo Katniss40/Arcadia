@@ -23,7 +23,7 @@ echo "Connexion réussi!";
 $role = $_POST['role'];                        
 $name = $_POST['name'];
 $username = $_POST['username'];
-$mdp = $_POST['mdp'];
+$password = $_POST['password'];
 $poste = $_POST['poste'];
 $email = $_POST['email'];                       
 $statut = $_POST['statut'];
@@ -31,7 +31,7 @@ $habitat = $_POST['habitat'];
 
 
 // insere les données dans la base de données
-$sql = "INSERT INTO users(role, name, username, mdp, poste, email, statut, habitat) VALUES ('$role', '$name', '$username', '$mdp', '$poste', '$email', '$statut', '$habitat')";
+$sql = "INSERT INTO users(role, name, username, password, poste, email, statut, habitat) VALUES ('$role', '$name', '$username', '$password', '$poste', '$email', '$statut', '$habitat')";
 
 
 if($conn->query($sql) === TRUE) {

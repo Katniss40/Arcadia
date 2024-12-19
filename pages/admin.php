@@ -128,7 +128,10 @@
                     
 
                     <div class="container mt-5 bg-arc-mint-green-light">
-            <h2>Ajouter un nouvel employé</h2>
+                    <div class="card-header bg-arc-mint-green text-light">
+                                <h2>Ajouter un nouvel employé</h2>
+                            </div>
+            <h2></h2>
             <form action="/pages/controleurs/gestion_employe.php" method="POST">
                 <div class="row">
                     <div class="col-md-6">
@@ -189,66 +192,23 @@
         </div> 
 
 
-                <!--<div class="card-employe">
-                    <div id="employees">
-                    <div class="container mt-5 bg-arc-mint-green-light">
-                            <h2>Ajouter un nouvel employé</h2>
-                        </div>
-
-                        <div>
-                            <div action="/pages/controleurs/gestion_employe.php" method="POST">
-                                <div class="form-group">
-                                    <label for="name">Nom de l'employé</label>
-                                    <input type="text" class="form-control" id="name" name="name" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="login">Nom d'utilisateur</label>
-                                    <input type="text" class="form-control" id="login" name="login" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="mdp">Mot de passe</label>
-                                    <input type="password" class="form-control" id="mdp" name="mdp" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="poste">Poste</label>
-                                    <input type="text" class="form-control" id="poste" name="poste" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">email</label>
-                                    <input type="text" class="form-control" id="email" name="email" value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="statut">Statut</label>
-                                    <input type="text" class="form-control" id="statut" name="statut" value="" required>
-                        </div>
-                        
-                                <div class="form-group">
-                                    <label for="role">Rôle</label>
-                                    <input type="text" class="form-control" id="role", name="role", value="" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="habitat">Habitat (pour les employés)</label>
-                                    <input type="text" class="form-control" id="habitat", name="habitat", value="" required>
-                                </div>
-</div>
-                                <button type="submit" class="btn btn-primary">Ajouter</button>
-                            </form>
-                        </div>
-
-                    </div>
-
-                </div>-->
+                
                         <br>
                         <br>
                         <div class="card-services">
                         <div id="employees">
-                            <div class="card-header bg-arc-mint-green text-light">
-                               <h2>modification des services</h2>
+                        <div class="card-header bg-arc-mint-green text-light">
+                                <h2>Modification des services</h2>
                             </div>
-
+                            
                             <div class="card-body">
                                 <form action="/pages/controleurs/gestion_service.php" method="POST">
-                                    <div class="form-group">
+                                <div class="form-group">
+                                        <label for="id">ID</label>
+                                        <input type="text" class="form-control" id="id" name="id" required>
+                                    </div>    
+                                
+                                <div class="form-group">
                                         <label for="service">Nom du service</label>
                                         <input type="text" class="form-control" id="service" name="service"  required>
                                     </div>
@@ -264,7 +224,7 @@
                                         <label for="action">Action</label>
                                         <input type="text" class="form-control" id="action" name="action"  required>
                                     </div>
-                                    <button type="submit" class="btn btn-primary">OK</button>
+                                    <button type="submit" class="btn btn-primary" id="btnServices">Mettre à jour</button>
                                 </form>
                             </div>
                         </div>
@@ -276,6 +236,7 @@
                     <div class="card-employe">                        
                         <div id="employees">
                             <div class="card-header bg-arc-mint-green text-light">
+                                
                                 <h2>Modification d'un habitat</h2>
                             </div>
                             <div class="card-body">
@@ -295,7 +256,10 @@
                     <br>
                     
         <div class="container mt-5 bg-arc-mint-green-light">
-            <h2>Ajouter un nouvel animal</h2>
+        <div class="card-header bg-arc-mint-green text-light">
+                                <h2>Ajouter un nouvel animal</h2>
+                            </div>
+            <h2></h2>
             <form action="/pages/controleurs/gestion_animal.php" method="POST">
                 <div class="row">
                     <div class="col-md-6">
