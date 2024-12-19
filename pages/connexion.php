@@ -96,8 +96,8 @@
 
           <form method="POST" action="/pages/controleurs/connexion_staff.php">
               <div class="mb-3">
-                <label for="username" class="form-label text-light">Nom d'utilisateur</label>
-                <input class="form-control" type="text" id="username" name="username" placeholder="Entrer le nom d'utilisateur" required>
+                <label for="email" class="form-label text-light">Nom d'utilisateur</label>
+                <input class="form-control" type="email" id="email" name="email" placeholder="Entrer le nom d'utilisateur" required>
                 <div class="invalid-feedback">
                   Le nom d'utilisateur et/ou le mot de passe ne correspondent pas aux données transmises par votre direction
                 </div>

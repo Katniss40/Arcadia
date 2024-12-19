@@ -1,5 +1,6 @@
 <?php
 //session_start();
+
 //include 'db_connexion.php';
 
 if($conn->connect_error) {
@@ -10,20 +11,22 @@ echo "Connexion réussi!";
 if (isset($_get['id'])) {
     $id = $_get['id'];
 
-    $stmt = $conn->prepare("DELETE * FROM habitat WHERE id = ?");
+    $stmt = $conn->prepare("DELETE * FROM animal WHERE id = ?");
     $stmt->bind_param("i", $id);
 
     if ($stmt->execute()) {
-        header('Location: gestion_habitat.php? message = success');
+        header('Location: gestion_animal.php? message = success');
     }else {
-        header('Location: gestion_habitat.php? message = error');
+        header('Location: gestion_animal.php? message = error');
     }
 
     $stmt->close();
 }else {
-    header('Location: gestion_habitat.php');
+    header('Location: gestion_animal.php');
 }
 
-$db->close();
+$conn->close();
+
+//$db->close();
 
 ?>

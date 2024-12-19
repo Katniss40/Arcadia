@@ -172,6 +172,7 @@
 
                         <?php
                 include("db_connexion.php");
+
                 $conn = new mysqli("mysql-zoo-arcadia-2025.alwaysdata.net", "383336", "@Admin2025", "zoo-arcadia-2025_zoo");
 
                 if ($conn->connect_error) {
@@ -196,8 +197,8 @@
                         echo "<td>" . htmlspecialchars($row['quantite']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['commentaires']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['remarques']) . "</td>";
-                        echo "<td><a href='/pages/admin.php'" . $row['id'] . "' class='btn btn-primary btn-sm'>Modifier</a> ";
-                        echo "<a href='/pages/controleurs/supp_anim.php'" . $row['id'] . "' class='btn btn-danger btn-sm'>Supprimer</a></td>";
+                        echo "<td><a href='/pages/edit_animal.php'" . $row['id'] . "' class='btn btn-primary btn-sm'>Modif</a> ";
+                        echo "<a href='/pages/controleurs/supp_animal.php'" . $row['id'] . "' class='btn btn-danger btn-sm'>Supp</a></td>";
                         echo "</tr>";
                     }
                 } else {

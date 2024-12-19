@@ -1,67 +1,62 @@
 <?php
-session_start();
 
+include("db_connexion.php");
 
-// Connexion a la base de données
-$servername = 'mysql-zoo-arcadia-2025.alwaysdata.net';
-$username = '383336';
-$password =  '@Admin2025';
-$dbname = 'zoo-arcadia-2025_zoo';
+$conn = new mysqli("mysql-zoo-arcadia-2025.alwaysdata.net", "383336", "@Admin2025", "zoo-arcadia-2025_zoo");
+    if ($conn->connect_error) {
+    die("Échec de la connexion : " . $conn->connect_error);
+    }
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Vérifier la connexion
-if($conn->connect_error) {
-    die("erreur de connexion: " .$conn->connect_error);
-} 
-echo "Connexion réussi! Bienvenue dans votre espace.";
-
-
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = filter_input(INPUT_POST,"username", FILTER_SANITIZE_SPECIAL_CHARS);
-    $password = filter_input(INPUT_POST,"password", FILTER_SANITIZE_SPECIAL_CHARS);
-
-
-    if($username && $password ) {
-        $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+if(isset($_POST["email"]) && isset($_POST["password"])) {
+    //if($email && $password ) {
+        $stmt = $conn->prepare("SELECT * FROM users WHERE email = ? AND password = ?");
         if ($stmt === false) {
             die("Erreur de connexion : " .$conn->error);
         }
-        $stmt->bind_param("ss", $username, $password);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $user = $result->fetch_assoc();
-        $stmt->close();
-
-        if($user) {
-            $_SESSION['username'] = $user['username'];
-            $_SESSION['role'] = $users['role'];
-
-            if ($user['role'] === 'admin') {
-                header('Location: /pages/admin.php');
-                exit();
-            } elseif  ($user['role'] === 'veterinaire') {
-                header('Location:/pages/sante.php');
-                exit();
-            } elseif ( $user['role'] === 'employe') {
-                header('Location:/pages/employe.php'); 
-                exit();
-            } else {
-                echo'Rôle inconnu.';
-                $conn->close(); // fermer la connexion
-            } 
+            $stmt->bind_param("ss", $email, $password);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $users = $result->fetch_assoc();
+            $stmt->close();
+        if ($email === false) {
+        // si aucun utilisateur ne correspond au login entré, on affiche une erreur 
+            echo'Identifications invalides, veuillez vous rapprocher de la direction pour récuperer vos identifiants';
         } else {
-            
-            echo "Login et/ou mot de passe inconnu";
-            header('Location:/');
+        // On verifie le password
+        if ($password === false) {
+            echo 'Mot de passe invalide, veuillez vous rapprocher de la direction pour récuperer vos identifiants';
         }
-    } else {
-        echo "Veuillez remplir tous les champs";
-    }
-}
+        }
+       
+        class user 
+        {
+            private string $id;
+            private string $email;
+            private string $password;
+            // Tableau de rôles
+            private array $roles = [];
+
+            public function getId(): string
+            {
+                return $this->id;
+            }
+            public function addRole(string $role): void
+            {
+                $this->roles[] = $role;
+            }
+            public function getRoles(): array
+            {
+                return $this->roles;
+            }
+        }
+
+            header('Location: /pages/admin.php');
+            exit();
+        } 
+
 ?>
 
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -78,4 +73,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
     
 </body>
-</html>
+</html>-->

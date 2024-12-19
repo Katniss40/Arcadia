@@ -168,13 +168,14 @@
 
                         <?php
                 include("db_connexion.php");
+                
                 $conn = new mysqli("mysql-zoo-arcadia-2025.alwaysdata.net", "383336", "@Admin2025", "zoo-arcadia-2025_zoo");
 
                 if ($conn->connect_error) {
                     die("Échec de la connexion : " . $conn->connect_error);
                 }
 
-                $sql = "SELECT * FROM users";
+                $sql = "SELECT * FROM user";
                 $result = $conn->query($sql);
 
                 if ($result->num_rows > 0) {
@@ -189,8 +190,8 @@
                         echo "<td>" . htmlspecialchars($row['email']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['statut']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['habitat']) . "</td>";                                                             
-                        echo "<td><a href='/pages/admin.php'" . $row['id'] . "' class='btn btn-primary btn-sm'>Modifier</a> ";
-                        echo "<a href='/pages/controleurs/supp_empl.php'" . $row['id'] . "' class='btn btn-danger btn-sm'>Supprimer</a></td>";
+                        echo "<td><a href='/pages/admin.php'" . $row['id'] . "' class='btn btn-primary btn-sm'>Modif</a> ";
+                        echo "<a href='/pages/controleurs/supp_empl.php'" . $row['id'] . "' class='btn btn-danger btn-sm'>Supp</a></td>";
                         echo "</tr>";
                     }
                 } else {

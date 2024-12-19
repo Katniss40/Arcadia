@@ -142,10 +142,13 @@
           </div>
       
     </section>       
-
-
     <section id="yourMessage" class="section">
         <div class="row bg-arc-mint-green-light py-3">
+        <div id="veterinaire_liste" >
+    <div class=" bg-arc-mint-green text-light">
+        <h3>bienvenue, Vétérinaire!</h3>
+    </div>
+<div class="row bg-arc-mint-green-light py-3">
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#EditionHabitatModal"  style="margin-top: 10px;">Ajouter un commentaire sur un habitat</button>
       
   </button>
@@ -219,33 +222,39 @@
 <br>
 </section> 
 
-<div id="veterinaire_liste" >
-    <div class=" bg-arc-mint-green text-light">
-        <h3>bienvenue, Vétérinaire!</h3>
-    </div>
-<div class="row bg-arc-mint-green-light py-3">
+
     
 
-    <h4>Liste des Animaux</h4>
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Nom</th>
-            <th>Espèce</th>
-            <th>Age</th>
-            <th>Habitat</th>
-            <th>Poids</th>
-            <th>Nourriture</th>
-            <th>Visite</th>
-            <th>Repas</th>
-            <th>Quantité</th>
-            <th>Commentaires</th>
-            <th>Remarques</th>
-            <th>Commentaire privé</th>
-        </tr>
+<section>
 
-        <?php
+        <div class="row bg-arc-mint-green-light-staff py-3">
+            <div class="card-list-employe mt-3">
+                <div class="card-header">
+                    Liste des animaux
+                </div>
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                            <th class="small-column">ID</th>
+                    <th class="small-column">Nom</th>
+                    <th>Espèce</th>
+                    <th class="small-column">Âge</th>
+                    <th>habitat</th>
+                    <th>poids</th>
+                    <th>Nourriture</th>
+                    <th>dernier Repas</th>
+                    <th class="small-column">visite véto</th>
+                    <th class="small-column">quantite</th>
+                    <th>Com Santé</th>
+                    <th>Com Privé</th>
+                    
+                            </tr>
+                        </thead>
+
+                        <?php
                 include("db_connexion.php");
+                
                 $conn = new mysqli("mysql-zoo-arcadia-2025.alwaysdata.net", "383336", "@Admin2025", "zoo-arcadia-2025_zoo");
 
                 if ($conn->connect_error) {
@@ -265,23 +274,29 @@
                         echo "<td>" . htmlspecialchars($row['habitat']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['poids']) . " kg</td>";
                         echo "<td>" . htmlspecialchars($row['typeN']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['visite']) . "</td>";                         
-                        echo "<td>" . htmlspecialchars($row['repas']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['repas']) . "</td>";                         
+                        echo "<td>" . htmlspecialchars($row['visite']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['quantite']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['commentaires']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['remarques']) . "</td>";
-                        echo "<td><a href='/pages/edit_animal.php'" . $row['id'] . "' class='btn btn-primary btn-sm'>Modifier</a> ";
+                        echo "<td><a href='/pages/admin.php'" . $row['id'] . "' class='btn btn-primary btn-sm'>Modifier</a> ";
                         echo "<a href='/pages/controleurs/supp_anim.php'" . $row['id'] . "' class='btn btn-danger btn-sm'>Supprimer</a></td>";
                         echo "</tr>";
                     }
                 } else {
-                    echo "<tr><td colspan='12'>Aucun animaux trouvés.</td></tr>";
+                    echo "<tr><td colspan='12'>Aucun employés trouvé.</td></tr>";
                 }
                 $conn->close();
                 ?>
-      
-        
-    </table>
+                        <body>
+                        
+                        </body>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+</section>
 
     
   
